@@ -1,0 +1,16 @@
+---
+- name: Check Node Exporter across Pi fleet
+  hosts: pis
+  gather_facts: false
+
+  tasks:
+    - name: Check Node Exporter service
+      ansible.builtin.command:
+        cmd: systemctl is-active node_exporter
+      register: node_exporter_status
+      changed_when: false
+      failed_when: false
+
+    - name: Report Node Exporter status
+      ansible.builtin.debug:
+        msg: "Node Exporter on {{ inventory_hostname }} is {{ node_exporter_status.stdout }}"

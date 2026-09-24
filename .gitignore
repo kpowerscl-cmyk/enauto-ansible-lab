@@ -1,0 +1,29 @@
+# Ansible temporary/retry files
+*.retry
+.ansible/
+
+# Secrets
+*.pem
+*.key
+*.vault
+vault.yml
+vault.yaml
+
+# SSH keys
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# Environment files
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
